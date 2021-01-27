@@ -1,11 +1,25 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
 const InformationBar = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <InfoDiv>
+      <Text>Gold: 3</Text>
+    </InfoDiv>
+  );
+};
 
-export default InformationBar
+const InfoDiv = styled.div`
+  width: 100px;
+  height: 70px;
+  margin: 40px 50px 0px 50px;
+  background-color: #4f4334;
+`;
+
+const Text = styled.p`
+  font-size: 24px;
+  color: gold;
+  text-align: center;
+`;
+
+export default InformationBar;

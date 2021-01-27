@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { images } from '../../images/images';
 import SidebarItem from './SidebarItem';
+import InformationBar from './InformationBar';
+import StartButton from './StartButton';
 
 const Sidebar = () => {
   return (
     <SidebarDiv>
       { images.boxes.map(box => <SidebarItem key={box} image={box} />) }
+      <InformationBar />
+      <StartButton />
     </SidebarDiv>
   )
 }
