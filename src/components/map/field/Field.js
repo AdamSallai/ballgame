@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Field = () => {
+const Field = ({x, y, char}) => {
   return (
-    <div>
-      
-    </div>
+    <Box>
+      {x + " " + y}
+    </Box>
   )
 }
 
