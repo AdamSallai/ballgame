@@ -8,17 +8,20 @@ import leftdown from "./tiles/leftdown.png";
 import rightup from "./tiles/rightup.png";
 import rightdown from "./tiles/rightdown.png";
 
-
 export const images = {
-  "wall": wall,
-  "door": door,
-  "cannon": cannon,
-  "ball": ball,
-  "floor": floor,
-  "boxes": [
-    leftup,
-    leftdown,
-    rightup,
-    rightdown
-  ]
-}
+  wall: wall,
+  door: door,
+  cannon: cannon,
+  ball: ball,
+  floor: floor,
+  boxes: [leftup, leftdown, rightup, rightdown],
+};
+
+export const getImageFromChar = (char) => {
+  switch (char) {
+    case "W":
+      return wall;
+    case "F":
+      return floor;
+  }
+};

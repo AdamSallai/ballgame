@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { getMap } from "../../api/mapApi";
 import styled from "styled-components";
-import Field from './field/Field';
+import Field from "./field/Field";
 
 const Map = () => {
   const [map, setMap] = useState(getMap());
 
   return (
-    <MapLayout>
+    <MapLayout width={map[1].length}>
       {map.map((line, y) => {
-        line.map((char, x) => {
-          return <Field key={x+"-"+y} x={x} y={y} char={char}/>
+        return line.map((char, x) => {
+          return <Field key={x + "-" + y} x={x} y={y} char={char} />;
         });
       })}
     </MapLayout>
@@ -18,7 +18,14 @@ const Map = () => {
 };
 
 const MapLayout = styled.div`
+  position: relative;
   image-rendering: pixelated;
+  width: ${(props) => props.width * 64}px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display:flex;
+  flex-wrap: wrap;
 `;
 
 export default Map;
