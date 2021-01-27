@@ -19,9 +19,9 @@ const SidebarDiv = styled.div`
   background-color: #B89265;
   width: 200px;
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-
 `
 
 
