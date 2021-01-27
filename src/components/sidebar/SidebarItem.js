@@ -12,7 +12,7 @@ const SidebarItem = ({image}) => {
 const Item = styled.div`
   width: 100px;
   height: 100px;
-  margin: 40px 50px;
+  margin: 60px 50px;
   background-color: #FFD4AC;
 `
 

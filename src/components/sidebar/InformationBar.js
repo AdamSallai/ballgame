@@ -12,7 +12,7 @@ const InformationBar = () => {
 const InfoDiv = styled.div`
   width: 100px;
   height: 70px;
-  margin: 40px 50px 0px 50px;
+  margin: 80px 50px 0px 50px;
   background-color: #4f4334;
 `;
 
