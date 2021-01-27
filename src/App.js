@@ -1,12 +1,21 @@
 import React from 'react';
-import {images} from './images/images'
+import Sidebar from './components/sidebar/Sidebar';
+import {createGlobalStyle} from 'styled-components';
 
 const App = () => {
   return (
     <div className="App">
-      <img src={images.wall} alt=""/>
+      <GlobalStyle />
+      <Sidebar />
     </div>
   );
 }
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 export default App;
