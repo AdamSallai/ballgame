@@ -32,7 +32,7 @@ const Field = ({char}) => {
   const handleDrop = (e) => {
     e.preventDefault();
     if(element !== "" && char === "F"){
-      setBlock(element)
+      setBlock(()=>element)
       setElement("")
     }
   }

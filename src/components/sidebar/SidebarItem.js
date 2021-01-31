@@ -10,9 +10,13 @@ const SidebarItem = ({image}) => {
     setElement(<Img src={image} />)
   }
 
+  const handleDragEnd = () => {
+    setElement("")
+  }
+
   return (
     <Item image={image}>
-      <Img draggable onDragStart={(e) => handleDragStart(e)} src={image} />
+      <Img draggable onDragStart={(e) => handleDragStart(e)} onDragEnd={handleDragEnd} src={image} />
     </Item>
   )
 }
