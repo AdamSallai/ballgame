@@ -1,11 +1,29 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import styled from 'styled-components';
 import { DraggedContext } from '../../../context/DraggedElement';
 import { getImageFromChar } from '../../../images/images';
 
-const Field = ({x, y, char}) => {
+const Field = ({char}) => {
   const[block, setBlock] = useState("");
+  const[content, setContent] = useState("");
   const[element, setElement] = useContext(DraggedContext);
+
+  useEffect(() => {
+    let array = [];
+
+    getImageFromChar(char).forEach((picture, index) => {
+      const line = <Img key={index} src={picture} alt=""/>
+      if(index === 1){
+        setBlock(prev => prev =line)
+      }else {
+        array.push(line);
+      }
+    })
+
+    setContent(()=>array);
+    
+
+  }, [char])
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -24,12 +42,7 @@ const Field = ({x, y, char}) => {
     <Box onDragOver={(e) => handleDragOver(e)}
          onDrop={(e) => handleDrop(e)}
     >
-      {
-        getImageFromChar(char).map((picture, index) => {
-          const line = <Img key={x+"-"+y+"-"+index} src={picture} alt=""/>
-          return line;
-        })
-      }
+      {content}
       {block}
     </Box>
   )

@@ -39,3 +39,4 @@ export const getImageFromChar = (char) => {
       return [wall]
   }
 };
+

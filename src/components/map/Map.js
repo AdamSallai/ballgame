@@ -4,13 +4,13 @@ import styled from "styled-components";
 import Field from "./field/Field";
 
 const Map = () => {
-  const [map, setMap] = useState(getMap());
+  const [map] = useState(getMap());
 
   return (
     <MapLayout width={map[1].length}>
       {map.map((line, y) => {
         return line.map((char, x) => {
-          return <Field key={x + "-" + y} x={x} y={y} char={char} />;
+          return <Field key={x + "-" + y} char={char} />;
         });
       })}
     </MapLayout>

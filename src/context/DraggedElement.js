@@ -12,16 +12,3 @@ export const DraggedProvider = (props) => {
   )
 
 }
-
-
-// export const ThemeContext = createContext();
-
-// export const ThemeProvider = (props) => {
-//   const [colorTheme, setColorTheme] = useState("dark");
-
-//   return (
-//     <ThemeContext.Provider value={[theme[colorTheme], setColorTheme]}>
-//       {props.children}
-//     </ThemeContext.Provider>
-//   );
-// };
