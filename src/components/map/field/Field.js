@@ -13,13 +13,14 @@ const Field = ({x, y, char}) => {
 
   const handleDrop = (e) => {
     e.preventDefault();
-    if(element !== ""){
+    if(element !== "" && char !== "W"){
       setBlock(element)
       setElement("")
     }
   }
 
   return (
+    
     <Box onDragOver={(e) => handleDragOver(e)}
          onDrop={(e) => handleDrop(e)}
     >

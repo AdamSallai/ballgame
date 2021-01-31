@@ -8,7 +8,6 @@ const SidebarItem = ({image}) => {
   // const [imageField] = useState()
 
   const handleDragStart = (e) => {
-    console.log(e)
     setElement(<Img src={image} />)
   }
 
