@@ -2,13 +2,16 @@ import React from 'react';
 import Sidebar from './components/sidebar/Sidebar';
 import {createGlobalStyle} from 'styled-components';
 import Main from './components/map/Main';
+import {DraggedProvider } from './context/DraggedElement';
 
 const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      <Sidebar />
-      <Main/>
+      <DraggedProvider>
+        <Sidebar />
+        <Main/>
+      </DraggedProvider>
     </div>
   );
 }
