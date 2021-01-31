@@ -24,8 +24,12 @@ const Field = ({x, y, char}) => {
     <Box onDragOver={(e) => handleDragOver(e)}
          onDrop={(e) => handleDrop(e)}
     >
+      {
+        getImageFromChar(char).map((picture, index) => {
+          return <Img key={x+"-"+y+"-"+index} src={picture} alt=""/>
+        })
+      }
       {block}
-      <Img src={getImageFromChar(char)} alt=""/>
     </Box>
   )
 }
@@ -39,6 +43,7 @@ const Box = styled.div`
 const Img = styled.img`
   width: 64px;
   height: 64px;
+  position: absolute;
 `
 
 

@@ -2,7 +2,7 @@ import wall from "./tiles/wall.png";
 import ball from "./tiles/ball.png";
 import door from "./tiles/door.png";
 import floor from "./tiles/floor.png";
-import cannon from "./tiles/wall.png";
+import cannon from "./tiles/cannon.png";
 import leftup from "./tiles/leftup.png";
 import leftdown from "./tiles/leftdown.png";
 import rightup from "./tiles/rightup.png";
@@ -19,9 +19,23 @@ export const images = {
 
 export const getImageFromChar = (char) => {
   switch (char) {
-    case "W":
-      return wall;
     case "F":
-      return floor;
+      return [floor];
+    case "C":
+      return [floor, cannon];
+    case "B":
+      return [ball];
+    case "D":
+      return [door];
+    case "1":
+      return [floor, leftup];
+    case "2":
+      return [floor, leftdown];
+    case "3":
+      return [floor, rightup];
+    case "4":
+      return [floor, rightdown];
+    default:
+      return [wall]
   }
 };
