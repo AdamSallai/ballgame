@@ -13,7 +13,7 @@ const Field = ({x, y, char}) => {
 
   const handleDrop = (e) => {
     e.preventDefault();
-    if(element !== "" && char !== "W"){
+    if(element !== "" && char === "F"){
       setBlock(element)
       setElement("")
     }
@@ -26,7 +26,8 @@ const Field = ({x, y, char}) => {
     >
       {
         getImageFromChar(char).map((picture, index) => {
-          return <Img key={x+"-"+y+"-"+index} src={picture} alt=""/>
+          const line = <Img key={x+"-"+y+"-"+index} src={picture} alt=""/>
+          return line;
         })
       }
       {block}
